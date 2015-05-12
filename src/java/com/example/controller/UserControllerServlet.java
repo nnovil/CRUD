@@ -27,12 +27,15 @@ public class UserControllerServlet extends HttpServlet{
            String action = req.getParameter("action");
            int id = Integer.parseInt(req.getParameter("userid"));
            UserBean ub = UserDao.getUserById(id);
+           System.out.println(ub);
            
            HttpSession session = req.getSession();
            //session.setAttribute("tbeid", id);
            //session.setAttribute("tbeusername", ub.getUsername());
            //session.setAttribute("tbepassword", ub.getPassword());
            session.setAttribute("tbe", ub);
+           session.setAttribute("tbeusername", ub.getUsername());
+           session.setAttribute("tbepassword", ub.getPassword());
            RequestDispatcher rd;
            
            if(action.equals("delete")){

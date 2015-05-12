@@ -150,8 +150,11 @@ public class UserDao {
             rs.next();
             retVar = new UserBean();
             retVar.setUserid(rs.getInt("userid"));
+            System.out.println(retVar.getUserid());
             retVar.setPassword(rs.getString("password"));
+            System.out.println(retVar.getPassword());
             retVar.setUsername(rs.getString("username"));
+            System.out.println(retVar.getUsername());
             //}
               
             rs.close();
